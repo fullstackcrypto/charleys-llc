@@ -1,14 +1,19 @@
 /* General Reset */
-body, h1, h2, p, ul, li, a {
+body, h1, h2, p, ul, li, a, button {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+}
+
 /* Navigation Bar */
 .navbar {
-    background-color: #004d00; /* Dark Green */
-    color: white;
+    background-color: #004d00;
     padding: 1rem;
     position: sticky;
     top: 0;
@@ -29,78 +34,59 @@ body, h1, h2, p, ul, li, a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s;
 }
 
-.navbar ul li a:hover {
-    color: #ffff99; /* Light Yellow */
+/* Hero Section */
+header {
+    text-align: center;
+    padding: 2rem;
+    background-color: #006400;
+    color: white;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+header button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 /* Section Styling */
-header, section {
+section {
     padding: 2rem;
+    margin: 1rem auto;
     text-align: center;
 }
 
-header {
-    background-color: #006400;
-    color: white;
-    padding: 3rem 2rem;
-}
-
-#about, #services, #testimonials, #contact {
-    background-color: #f4f4f9;
-    color: #333;
-    margin: 2rem 0;
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Footer Styling */
-footer {
-    background-color: #004d00;
-    color: white;
-    text-align: center;
-    padding: 1rem 0;
-    font-size: 0.9rem;
-}
-
-footer a {
-    color: #ffff99;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-/* Contact Form */
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
 }
 
-form input, form textarea, form button {
-    width: 80%;
-    max-width: 400px;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
+.service {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-form button {
-    background-color: #007bff;
+/* Footer */
+footer {
+    background-color: #004d00;
     color: white;
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-form button:hover {
-    background-color: #0056b3;
+    padding: 1rem;
+    text-align: center;
 }
