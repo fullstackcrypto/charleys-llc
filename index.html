@@ -7,11 +7,30 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home">
         <h1>Welcome to CHARLEY'S LLC</h1>
         <p>Your reliable property cleanup service</p>
     </header>
 
+    <!-- About Us Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>At CHARLEY'S LLC, we are committed to providing top-notch property cleanup services. Our team is dedicated to quick, reliable, and affordable solutions to meet your needs.</p>
+    </section>
+
+    <!-- Services Section -->
     <section id="services">
         <h2>Our Services</h2>
         <ul>
@@ -22,15 +41,41 @@
         </ul>
     </section>
 
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <h2>What Our Customers Say</h2>
+        <blockquote>
+            "CHARLEY'S LLC did a fantastic job cleaning up my property. Highly recommended!" - Jane D.
+        </blockquote>
+    </section>
+
+    <!-- Contact Section -->
     <section id="contact">
         <h2>Contact Us</h2>
+        <form action="#" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
         <p>Email: contact@charleysllc.com</p>
         <p>Phone: (555) 123-4567</p>
     </section>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 CHARLEY'S LLC. All rights reserved.</p>
+        <p>Follow us on 
+            <a href="#">Facebook</a>, 
+            <a href="#">LinkedIn</a>, 
+            <a href="#">Twitter</a>.
+        </p>
     </footer>
 </body>
 </html>
-
