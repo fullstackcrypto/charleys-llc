@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHARLEY'S LLC - Veteran-Owned Services</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('services') }}">Services</a></li>
+            <li><a href="{{ url_for('membership') }}">Membership</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            <li><a href="{{ url_for('signin') }}">Sign In</a></li>
+        </ul>
+    </header>
+
+    <header>
+        <h1>CHARLEY'S LLC</h1>
+        <p class="tagline">Veteran-Owned Cleanup & Property Prep Services You Can Count On</p>
+    </header>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="service-package">
+            <h3>General Cleaning</h3>
+            <p>Keep your property neat and presentable with our regular cleaning services.</p>
+        </div>
+        <div class="service-package">
+            <h3>Deep Cleaning</h3>
+            <p>A thorough clean to tackle tough dirt and problem areas.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form action="/contact" method="post" enctype="multipart/form-data">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <label for="file">Upload Project Photos or Files</label>
+            <input type="file" id="file" name="file">
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2024 CHARLEY'S LLC. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a></p>
+    </footer>
+</body>
+</html>
