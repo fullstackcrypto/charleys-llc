@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>CHARLEY'S LLC - Veteran-Owned Services</title>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#membership">Membership</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="signin.html">Sign In</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header id="home">
+        <h1>CHARLEY'S LLC</h1>
+        <p class="tagline">Veteran-Owned Cleanup & Property Prep Services You Can Count On</p>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-package">
+                <h3>General Cleaning</h3>
+                <p>Keep your property neat and presentable with our regular cleaning services.</p>
+            </div>
+            <div class="service-package">
+                <h3>Deep Cleaning</h3>
+                <p>A thorough clean to tackle tough dirt and problem areas.</p>
+            </div>
+            <div class="service-package">
+                <h3>Junk Removal</h3>
+                <p>Get rid of unwanted junk and declutter your property.</p>
+            </div>
+            <div class="service-package">
+                <h3>Pressure Washing</h3>
+                <p>Make exteriors shine with our pressure washing services.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Section -->
+    <section id="membership">
+        <h2>Membership Packages</h2>
+        <div class="services-grid">
+            <div class="service-package">
+                <h3>Basic Package</h3>
+                <p>$100/month - 1 Cleaning Visit per Month and Direct Communication</p>
+                <button onclick="window.location.href='#contact'">More Info</button>
+                <button onclick="alert('Please contact us to complete your membership sign-up.')">Sign Up</button>
+            </div>
+            <div class="service-package">
+                <h3>Standard Package</h3>
+                <p>$200/month - 2 Cleaning Visits per Month, including Deep Cleaning</p>
+                <button onclick="window.location.href='#contact'">More Info</button>
+                <button onclick="alert('Please contact us to complete your membership sign-up.')">Sign Up</button>
+            </div>
+            <div class="service-package">
+                <h3>Premium Package</h3>
+                <p>$350/month - 3 Cleaning Visits per Month, Exterior Maintenance, and Junk Removal</p>
+                <button onclick="window.location.href='#contact'">More Info</button>
+                <button onclick="alert('Please contact us to complete your membership sign-up.')">Sign Up</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form action="/contact" method="post">
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 CHARLEY'S LLC. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+</body>
+</html>
