@@ -1,37 +1,39 @@
-from flask import Flask, render_template, request, send_from_directory, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for
 import os
 
 app = Flask(__name__)
 
-# Configuration for the uploads folder
-UPLOAD_FOLDER = 'uploads'
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-
+# Route for Home page
 @app.route('/')
 def home():
     return render_template('index.html')
 
-# Serve static files
-@app.route('/static/<path:filename>')
-def static_files(filename):
-    return send_from_directory('static', filename)
+# Route for Services page
+@app.route('/services')
+def services():
+    return render_template('services.html')
 
-# Serve sign-in page
-@app.route('/signin.html')
+# Route for Membership page
+@app.route('/membership')
+def membership():
+    return render_template('membership.html')
+
+# Route for Contact Us page
+@app.route('/contact', methods=['GET', 'POST'])
+def contact():
+    if request.method == 'POST':
+        # Logic to handle contact form submission
+        name = request.form['name']
+        email = request.form['email']
+        message = request.form['message']
+        # Logic to save or send email
+        return redirect(url_for('home'))
+    return render_template('contact.html')
+
+# Route for Sign In page
+@app.route('/signin')
 def signin():
     return render_template('signin.html')
-
-# Handle file uploads from contact form
-@app.route('/contact', methods=['POST'])
-def contact():
-    if 'file' not in request.files:
-        return 'No file part in the form', 400
-    file = request.files['file']
-    if file.filename == '':
-        return 'No file selected', 400
-    if file:
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
-    return redirect(url_for('home'))
 
 if __name__ == '__main__':
     app.run(debug=True)

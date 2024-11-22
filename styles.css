@@ -1,5 +1,5 @@
 /* General Reset */
-body, h1, h2, h3, p, ul, li, a, button {
+body, h1, h2, p, ul, li, a, button {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -33,6 +33,10 @@ body {
     font-weight: bold;
 }
 
+.navbar ul li a:hover {
+    color: #ffa500; /* Highlight color for links */
+}
+
 /* Homepage */
 header {
     text-align: center;
@@ -51,56 +55,6 @@ header {
     padding: 2rem;
     background-color: #faecec;
     text-align: center;
-}
-
-.service-package {
-    border: 1px solid #003366;
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: 8px;
-}
-
-/* Membership Section */
-#membership {
-    padding: 2rem;
-    background-color: #e6f7ff;
-    text-align: center;
-}
-
-.membership-package {
-    border: 2px solid #003366;
-    padding: 1.5rem;
-    margin: 1rem 0;
-    border-radius: 10px;
-    background-color: #ffffff;
-}
-
-/* Contact Section */
-#contact {
-    padding: 2rem;
-    background-color: #f4f4f4;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    max-width: 400px;
-    margin: auto;
-}
-
-input, select, textarea, button {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button {
-    background-color: #064d09;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
 }
 
 /* Footer */
