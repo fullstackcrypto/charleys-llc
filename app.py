@@ -1,39 +1,41 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 import os
 
 app = Flask(__name__)
+app.secret_key = os.urandom(24)  # Required for flash messages
 
-# Route for Home page
 @app.route('/')
 def home():
     return render_template('index.html')
 
-# Route for Services page
 @app.route('/services')
 def services():
     return render_template('services.html')
 
-# Route for Membership page
-@app.route('/membership')
-def membership():
-    return render_template('membership.html')
-
-# Route for Contact Us page
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     if request.method == 'POST':
-        # Logic to handle contact form submission
-        name = request.form['name']
-        email = request.form['email']
-        message = request.form['message']
-        # Logic to save or send email
-        return redirect(url_for('home'))
+        # Get form data
+        name = request.form.get('name')
+        email = request.form.get('email')
+        phone = request.form.get('phone')
+        service = request.form.get('service')
+        message = request.form.get('message')
+        
+        # Here you would typically add code to:
+        # 1. Send an email notification
+        # 2. Store the contact request in a database
+        # For now, we'll just show a success message
+        
+        flash(f'Thank you {name}! We will contact you soon about your {service} request.')
+        return redirect(url_for('contact'))
+    
     return render_template('contact.html')
 
-# Route for Sign In page
-@app.route('/signin')
-def signin():
-    return render_template('signin.html')
+# Add error handlers for better user experience
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
 
 if __name__ == '__main__':
     app.run(debug=True)
