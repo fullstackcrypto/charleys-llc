@@ -3,9 +3,36 @@
 {% block title %}Contact Us{% endblock %}
 
 {% block content %}
+<style>
+    body {
+        background-color: #E6E4DC !important; /* Light khaki background */
+    }
+    .card {
+        background-color: #F5F4F0; /* Lighter khaki for cards */
+        border: none;
+    }
+    .form-control, .form-select {
+        background-color: #FFFFFF; /* Keep form inputs white for contrast */
+        border: 1px solid #D1CFC7; /* Slightly darker border */
+    }
+    .form-control:focus, .form-select:focus {
+        background-color: #FFFFFF;
+        border-color: #C0BD B4;
+        box-shadow: 0 0 0 0.2rem rgba(192, 189, 180, 0.25);
+    }
+    .btn-primary {
+        background-color: #4A4843; /* Darker contrasting color for buttons */
+        border-color: #4A4843;
+    }
+    .btn-primary:hover {
+        background-color: #35332F;
+        border-color: #35332F;
+    }
+</style>
+
 <div class="row justify-content-center">
     <div class="col-md-8">
-        <div class="card">
+        <div class="card shadow">
             <div class="card-body">
                 <h1 class="card-title text-center mb-4">Contact Us</h1>
                 
@@ -34,10 +61,10 @@
                     </div>
                     
                     <div class="mb-3">
-                        <label for="phone" class="form-label">Phone</label>
+                        <label for="phone" class="form-label">Phone Number</label>
                         <input type="tel" class="form-control" id="phone" name="phone" 
                                placeholder="123-456-7890">
-                        <small class="text-muted">Format: 123-456-7890 (Optional)</small>
+                        <small class="text-muted">Format: 123-456-7890</small>
                     </div>
 
                     <div class="mb-3">
@@ -77,7 +104,7 @@
             </div>
         </div>
 
-        <div class="card mt-4">
+        <div class="card mt-4 shadow">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
@@ -111,7 +138,7 @@
 <script>
     document.getElementById('files').addEventListener('change', function(e) {
         const preview = document.getElementById('filePreview');
-        preview.innerHTML = ''; // Clear previous previews
+        preview.innerHTML = '';
         
         if (this.files) {
             const filesArray = Array.from(this.files);
@@ -120,17 +147,16 @@
             filesArray.forEach(file => {
                 totalSize += file.size;
                 
-                // Create preview container
                 const col = document.createElement('div');
                 col.className = 'col-6 col-md-4 col-lg-3';
                 
                 const previewCard = document.createElement('div');
                 previewCard.className = 'card h-100';
+                previewCard.style.backgroundColor = '#FFFFFF'; // White background for preview cards
                 
                 const cardBody = document.createElement('div');
                 cardBody.className = 'card-body p-2 text-center';
                 
-                // Show either image preview or file icon
                 if (file.type.startsWith('image/')) {
                     const img = document.createElement('img');
                     img.className = 'img-fluid mb-2';
@@ -149,7 +175,6 @@
                     cardBody.appendChild(icon);
                 }
                 
-                // Add file name
                 const fileName = document.createElement('small');
                 fileName.className = 'text-muted d-block';
                 fileName.textContent = file.name.length > 15 ? 
@@ -162,8 +187,7 @@
                 preview.appendChild(col);
             });
             
-            // Check total size
-            if (totalSize > 16 * 1024 * 1024) { // 16MB
+            if (totalSize > 16 * 1024 * 1024) {
                 alert('Total file size exceeds 16MB limit. Please select smaller files.');
                 this.value = '';
                 preview.innerHTML = '';
@@ -171,7 +195,6 @@
         }
     });
 
-    // Form validation
     document.getElementById('contactForm').addEventListener('submit', function(e) {
         const phone = document.getElementById('phone').value;
         if (phone && !phone.match(/^\d{3}-\d{3}-\d{4}$/)) {
