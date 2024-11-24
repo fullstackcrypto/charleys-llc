@@ -13,7 +13,7 @@ app.config.update(
     MAIL_PORT=587,
     MAIL_USE_TLS=True,
     MAIL_USERNAME='charley@charleysllc.com',
-    MAIL_PASSWORD='Matrix4228!',  # Replace with your actual email password
+    MAIL_PASSWORD=os.environ.get('MAIL_PASSWORD'),
     MAIL_DEFAULT_SENDER='charley@charleysllc.com'
 )
 
