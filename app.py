@@ -2,26 +2,31 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_mail import Mail, Message
 from werkzeug.utils import secure_filename
 import os
-import secrets
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 app = Flask(__name__)
-app.secret_key = secrets.token_hex(16)
+
+# Security and Configuration Settings
+app.secret_key = os.environ.get('SECRET_KEY', os.urandom(24))
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
 
 # Email Configuration
 app.config.update(
-    MAIL_SERVER='mail.privateemail.com',
-    MAIL_PORT=587,
+    MAIL_SERVER=os.environ.get('MAIL_SERVER', 'mail.privateemail.com'),
+    MAIL_PORT=int(os.environ.get('MAIL_PORT', 587)),
     MAIL_USE_TLS=True,
-    MAIL_USERNAME='charley@charleysllc.com',
+    MAIL_USERNAME=os.environ.get('MAIL_USERNAME', 'charley@charleysllc.com'),
     MAIL_PASSWORD=os.environ.get('MAIL_PASSWORD'),
-    MAIL_DEFAULT_SENDER='charley@charleysllc.com'
+    MAIL_DEFAULT_SENDER=os.environ.get('MAIL_DEFAULT_SENDER', 'charley@charleysllc.com')
 )
 
 # File Upload Configuration
 UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif', 'pdf'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
 
 mail = Mail(app)
 
@@ -43,28 +48,29 @@ def services():
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     if request.method == 'POST':
-        name = request.form.get('name')
-        email = request.form.get('email')
-        phone = request.form.get('phone')
-        service = request.form.get('service')
-        message = request.form.get('message')
-        
-        # Handle file uploads
-        attachments = []
-        if 'files' in request.files:
-            files = request.files.getlist('files')
-            for file in files:
-                if file and allowed_file(file.filename):
-                    filename = secure_filename(file.filename)
-                    filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-                    file.save(filepath)
-                    attachments.append(filepath)
+        try:
+            name = request.form.get('name')
+            email = request.form.get('email')
+            phone = request.form.get('phone')
+            service = request.form.get('service')
+            message = request.form.get('message')
+            
+            # Handle file uploads
+            attachments = []
+            if 'files' in request.files:
+                files = request.files.getlist('files')
+                for file in files:
+                    if file and allowed_file(file.filename):
+                        filename = secure_filename(file.filename)
+                        filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+                        file.save(filepath)
+                        attachments.append(filepath)
 
-        # Create email message
-        msg = Message(
-            subject=f'New Contact Form Submission - {service}',
-            recipients=[app.config['MAIL_USERNAME']],
-            body=f"""
+            # Create email message
+            msg = Message(
+                subject=f'New Contact Form Submission - {service}',
+                recipients=[app.config['MAIL_USERNAME']],
+                body=f"""
 New contact form submission from your website:
 
 Name: {name}
@@ -74,48 +80,50 @@ Service Requested: {service}
 
 Message:
 {message}
-            """
-        )
+                """
+            )
 
-        # Add attachments to email
-        for attachment in attachments:
-            with open(attachment, 'rb') as f:
-                msg.attach(
-                    filename=os.path.basename(attachment),
-                    content_type='application/octet-stream',
-                    data=f.read()
-                )
+            # Add attachments to email
+            for attachment in attachments:
+                with open(attachment, 'rb') as f:
+                    msg.attach(
+                        filename=os.path.basename(attachment),
+                        content_type='application/octet-stream',
+                        data=f.read()
+                    )
 
-        # Send auto-reply to customer
-        auto_reply = Message(
-            subject='Thank you for contacting CHARLEY\'S LLC',
-            recipients=[email],
-            body=f"""
+            # Send auto-reply to customer
+            auto_reply = Message(
+                subject='Thank you for contacting CHARLEY\'S LLC',
+                recipients=[email],
+                body=f"""
 Dear {name},
 
 Thank you for contacting CHARLEY'S LLC. We have received your message regarding {service}.
 
-We will review your request and get back to you shortly.
+We will review your request and get back to you within 24 hours.
 
 Best regards,
 CHARLEY'S LLC Team
-            """
-        )
+                """
+            )
 
-        try:
+            # Send emails
             mail.send(msg)
             mail.send(auto_reply)
             flash('Thank you! Your message has been sent successfully. We will contact you soon.')
+
         except Exception as e:
-            print(f"Error sending email: {e}")
+            print(f"Error processing contact form: {e}")
             flash('There was an error sending your message. Please try calling us directly.')
 
-        # Clean up uploaded files
-        for attachment in attachments:
-            try:
-                os.remove(attachment)
-            except Exception as e:
-                print(f"Error removing file {attachment}: {e}")
+        finally:
+            # Clean up uploaded files
+            for attachment in attachments:
+                try:
+                    os.remove(attachment)
+                except Exception as e:
+                    print(f"Error removing file {attachment}: {e}")
 
         return redirect(url_for('contact'))
 
@@ -131,4 +139,4 @@ def too_large(e):
     return redirect(url_for('contact'))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=os.environ.get('FLASK_ENV') == 'development')
