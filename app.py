@@ -1,13 +1,15 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash 
 from flask_mail import Mail, Message
 from werkzeug.utils import secure_filename
 import os
 from dotenv import load_dotenv
+from flask_sslify import SSLify
 
 # Load environment variables
 load_dotenv()
 
 app = Flask(__name__)
+sslify = SSLify(app)
 
 # Security and Configuration Settings
 app.secret_key = os.environ.get('SECRET_KEY', os.urandom(24))
