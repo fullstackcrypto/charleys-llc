@@ -20,9 +20,9 @@ app.config.update(
     MAIL_SERVER=os.environ.get('MAIL_SERVER', 'mail.privateemail.com'),
     MAIL_PORT=int(os.environ.get('MAIL_PORT', 587)),
     MAIL_USE_TLS=True,
-    MAIL_USERNAME=os.environ.get('MAIL_USERNAME', 'charleys.llc@gmail.com'),
+    MAIL_USERNAME=os.environ.get('MAIL_USERNAME', 'charley@charleysllc.com'),
     MAIL_PASSWORD=os.environ.get('MAIL_PASSWORD'),
-    MAIL_DEFAULT_SENDER=os.environ.get('MAIL_DEFAULT_SENDER', 'charleys.llc@gmail.com')
+    MAIL_DEFAULT_SENDER=os.environ.get('MAIL_DEFAULT_SENDER', 'charley@charleysllc.com')
 )
 
 # File Upload Configuration
@@ -96,7 +96,7 @@ Message:
 
             # Send auto-reply to customer
             auto_reply = Message(
-                subject='Thank you for contacting CHARLEY'S LLC',
+                subject='Thank you for contacting CHARLEY\'S LLC',
                 recipients=[email],
                 body=f"""
 Dear {name},
