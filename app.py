@@ -96,7 +96,7 @@ Message:
 
             # Send auto-reply to customer
             auto_reply = Message(
-                subject='Thank you for contacting CHARLEY\'S LLC',
+                subject='Thank you for contacting CHARLEY'S LLC',
                 recipients=[email],
                 body=f"""
 Dear {name},
