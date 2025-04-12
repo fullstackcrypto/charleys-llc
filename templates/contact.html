@@ -1,251 +1,66 @@
-{% extends "base.html" %}
-
-{% block title %}Contact Us{% endblock %}
-
-{% block content %}
-<style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact – Ready-Set Solutions</title>
+  <style>
     body {
-        background: linear-gradient(145deg, #2C2C2C, #3A3A3A) !important;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
     }
-    .card {
-        background: linear-gradient(145deg, #E6E4DC, #D1CFC7);
-        border: none;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    header {
+      background: #003366;
+      color: white;
+      padding: 2rem;
+      text-align: center;
     }
-    .form-control, .form-select {
-        background-color: #E6E4DC;
-        border: 1px solid #A9A69E;
-        color: #2C2C2C;
+    section {
+      padding: 2rem;
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      margin-top: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    .form-control:focus, .form-select:focus {
-        background-color: #E6E4DC;
-        border-color: #2C2C2C;
-        box-shadow: 0 0 0 0.2rem rgba(44, 44, 44, 0.25);
-        color: #2C2C2C;
+    a {
+      color: #003366;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 1rem;
+      text-decoration: none;
     }
-    .form-control::placeholder {
-        color: #6c757d;
+    .button {
+      background: #003366;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
     }
-    .card-title {
-        color: #2C2C2C;
-    }
-    .text-muted {
-        color: #4A4843 !important;
-    }
-    .btn-primary {
-        background: linear-gradient(145deg, #2C2C2C, #3A3A3A);
-        border: none;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        transition: all 0.3s ease;
-    }
-    .btn-primary:hover {
-        background: linear-gradient(145deg, #3A3A3A, #2C2C2C);
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
-    .alert-success {
-        background-color: #D1CFC7;
-        border-color: #A9A69E;
-        color: #2C2C2C;
-    }
-    #filePreview .card {
-        background-color: #D1CFC7;
-    }
-    /* Custom scrollbar for textarea */
-    textarea::-webkit-scrollbar {
-        width: 8px;
-    }
-    textarea::-webkit-scrollbar-track {
-        background: #D1CFC7;
-    }
-    textarea::-webkit-scrollbar-thumb {
-        background: #2C2C2C;
-        border-radius: 4px;
-    }
-    /* File upload button styling */
-    input[type="file"]::file-selector-button {
-        background: linear-gradient(145deg, #2C2C2C, #3A3A3A);
-        color: white;
-        border: none;
-        padding: 8px 16px;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-    input[type="file"]::file-selector-button:hover {
-        background: linear-gradient(145deg, #3A3A3A, #2C2C2C);
-    }
-</style>
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Contact Ready-Set Solutions</h1>
+    <p>Smarter Homes. Safer Spaces. Simple Tech Help.</p>
+  </header>
 
-<div class="row justify-content-center">
-    <div class="col-md-8">
-        <div class="card shadow">
-            <div class="card-body">
-                <h1 class="card-title text-center mb-4">Contact Us</h1>
-                
-                {% with messages = get_flashed_messages() %}
-                    {% if messages %}
-                        {% for message in messages %}
-                            <div class="alert alert-success alert-dismissible fade show">
-                                {{ message }}
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>
-                        {% endfor %}
-                    {% endif %}
-                {% endwith %}
+  <section>
+    <h2>Get in Touch</h2>
+    <a href="tel:+14808407177">Call or Text: (480) 840-7177</a>
+    <a href="mailto:ReadySetSolutions@charleysllc.com">Email: ReadySetSolutions@charleysllc.com</a>
+    <a href="https://neuramatrix.ai" target="_blank">Visit: NeuraMatrix.ai</a>
 
-                <form method="POST" action="{{ url_for('contact') }}" enctype="multipart/form-data" id="contactForm">
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="name" class="form-label">Name *</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="col-md-6 mb-3">
-                            <label for="email" class="form-label">Email *</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label for="phone" class="form-label">Phone Number</label>
-                        <input type="tel" class="form-control" id="phone" name="phone" 
-                               placeholder="123-456-7890">
-                        <small class="text-muted">Format: 123-456-7890</small>
-                    </div>
+    <p>Need a quote or want to refer someone? We're working on a simple form for that — coming soon!</p>
 
-                    <div class="mb-3">
-                        <label for="service" class="form-label">Service Needed *</label>
-                        <select class="form-select" id="service" name="service" required>
-                            <option value="" selected disabled>Choose a service...</option>
-                            <option value="Property Cleanup">Property Cleanup & Visual Enhancement</option>
-                            <option value="Basic Repairs">Basic Property Repairs</option>
-                            <option value="Property Preparation">Property Preparation Services</option>
-                            <option value="Exterior Maintenance">Exterior Maintenance</option>
-                            <option value="Other">Other Services</option>
-                        </select>
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label for="message" class="form-label">Message *</label>
-                        <textarea class="form-control" id="message" name="message" rows="4" required
-                                  placeholder="Please describe what you need..."></textarea>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="files" class="form-label">Upload Photos</label>
-                        <input type="file" class="form-control" id="files" name="files" multiple 
-                               accept="image/jpeg,image/png,image/gif,application/pdf">
-                        <small class="text-muted d-block mt-1">
-                            Accepted formats: JPG, PNG, GIF, PDF (Max size: 16MB total)
-                        </small>
-                        <div id="filePreview" class="mt-2 row g-2"></div>
-                    </div>
-                    
-                    <div class="text-center mt-4">
-                        <button type="submit" class="btn btn-primary btn-lg px-5">
-                            Send Message
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <div class="card mt-4 shadow">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h3 class="card-title">Service Area</h3>
-                        <p class="card-text">We proudly serve the Chandler, AZ area and surrounding communities.</p>
-                    </div>
-                    
-                    <div class="col-md-6">
-                        <h3 class="card-title">Business Hours</h3>
-                        <ul class="list-unstyled">
-                            <li>Monday - Friday: 7:00 AM - 6:00 PM</li>
-                            <li>Saturday: 8:00 AM - 2:00 PM</li>
-                            <li>Sunday: Closed</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="mt-4">
-                    <h3 class="card-title">Quick Response</h3>
-                    <p class="card-text">
-                        We will respond to all inquiries within 24 hours.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-    document.getElementById('files').addEventListener('change', function(e) {
-        const preview = document.getElementById('filePreview');
-        preview.innerHTML = '';
-        
-        if (this.files) {
-            const filesArray = Array.from(this.files);
-            let totalSize = 0;
-            
-            filesArray.forEach(file => {
-                totalSize += file.size;
-                
-                const col = document.createElement('div');
-                col.className = 'col-6 col-md-4 col-lg-3';
-                
-                const previewCard = document.createElement('div');
-                previewCard.className = 'card h-100';
-                previewCard.style.backgroundColor = '#FFFFFF'; // White background for preview cards
-                
-                const cardBody = document.createElement('div');
-                cardBody.className = 'card-body p-2 text-center';
-                
-                if (file.type.startsWith('image/')) {
-                    const img = document.createElement('img');
-                    img.className = 'img-fluid mb-2';
-                    img.style.maxHeight = '100px';
-                    img.style.objectFit = 'cover';
-                    
-                    const reader = new FileReader();
-                    reader.onload = function(e) {
-                        img.src = e.target.result;
-                    };
-                    reader.readAsDataURL(file);
-                    cardBody.appendChild(img);
-                } else {
-                    const icon = document.createElement('i');
-                    icon.className = 'far fa-file-pdf fa-3x mb-2 text-danger';
-                    cardBody.appendChild(icon);
-                }
-                
-                const fileName = document.createElement('small');
-                fileName.className = 'text-muted d-block';
-                fileName.textContent = file.name.length > 15 ? 
-                    file.name.substring(0, 12) + '...' : 
-                    file.name;
-                cardBody.appendChild(fileName);
-                
-                previewCard.appendChild(cardBody);
-                col.appendChild(previewCard);
-                preview.appendChild(col);
-            });
-            
-            if (totalSize > 16 * 1024 * 1024) {
-                alert('Total file size exceeds 16MB limit. Please select smaller files.');
-                this.value = '';
-                preview.innerHTML = '';
-            }
-        }
-    });
-
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        const phone = document.getElementById('phone').value;
-        if (phone && !phone.match(/^\d{3}-\d{3}-\d{4}$/)) {
-            e.preventDefault();
-            alert('Please enter phone number in format: 123-456-7890');
-            return false;
-        }
-    });
-</script>
-{% endblock %}
+    <a href="/" class="button">Back to Home</a>
+  </section>
+</body>
+</html>
