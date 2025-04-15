@@ -1,29 +1,30 @@
 {% extends "base.html" %}
-
-{% block title %}Home{% endblock %}
-
 {% block content %}
-<div class="row align-items-center">
-    <div class="col-lg-6">
-        <h1 class="display-4">Professional Property Services</h1>
-        <p class="lead">Veteran-owned property preparation and cleanup service, serving the Chandler, AZ area.</p>
+<section class="py-5 bg-dark text-light">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <h1 class="display-4 fw-bold">Smart Property Prep, Powered by Purpose</h1>
+        <p class="lead">Veteran-owned cleanup & property prep services for Chandler, AZ and beyond. Fast. Reliable. Impactful.</p>
         <div class="mt-4">
-            <a href="/contact" class="btn btn-primary btn-lg">Get a Quote</a>
-            <a href="/services" class="btn btn-outline-secondary btn-lg ms-2">Our Services</a>
+          <a href="/contact" class="btn btn-primary btn-lg me-2">Get a Quote</a>
+          <a href="/services" class="btn btn-outline-light btn-lg">Explore Services</a>
         </div>
-    </div>
-    <div class="col-lg-6">
-        <div class="card mt-4 mt-lg-0">
-            <div class="card-body">
-                <h5 class="card-title">Our Services Include:</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-2">✓ Property Cleanup & Visual Enhancement</li>
-                    <li class="mb-2">✓ Basic Property Repairs</li>
-                    <li class="mb-2">✓ Property Preparation Services</li>
-                    <li class="mb-2">✓ Exterior Maintenance</li>
-                </ul>
-            </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card shadow-lg bg-gradient border-0">
+          <div class="card-body">
+            <h5 class="card-title text-primary fw-bold">What We Do</h5>
+            <ul class="list-unstyled fs-5">
+              <li class="mb-2">• Visual Property Cleanup & Enhancement</li>
+              <li class="mb-2">• Minor Repairs & Smart Fixes</li>
+              <li class="mb-2">• Real Estate Prep & Consulting</li>
+              <li class="mb-2">• Exterior Maintenance & Upgrades</li>
+            </ul>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </div>
+</section>
 {% endblock %}
