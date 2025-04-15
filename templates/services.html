@@ -1,79 +1,82 @@
 {% extends "base.html" %}
-
 {% block title %}Services{% endblock %}
 
 {% block content %}
+<section class="py-5">
+  <div class="container">
+    <h1 class="display-4 text-center mb-5">Our Smart Services</h1>
+    <div class="row g-4">
 
-<h1 class="mb-4">Services offered</h1>
-
-
-    <!----- Repairs ----->
-    <div class="col-md-6">
+      <!-- Repairs -->
+      <div class="col-md-6 col-lg-6">
         <div class="card h-100">
-            <div class="card-body">
-                <h5 class="card-title">Property Repairs</h5>
-                <ul class="list-unstyled">
-                    <li>✓ Minor fence repairs</li>
-                    <li>✓ Gate adjustments</li>
-                    <li>✓ Basic outdoor fixture repairs</li>
-                    <li>✓ Screen repairs</li>
-                    <li>✓ Weather stripping</li>
-                    <li>✓ Hardware replacement</li>
-                </ul>
-                <a href="/contact" class="btn btn-primary">Get Quote</a>
-            </div>
+          <div class="card-body">
+            <h5 class="card-title text-primary">Property Repairs</h5>
+            <ul class="list-unstyled fs-5">
+              <li>✓ Minor fence repairs</li>
+              <li>✓ Gate adjustments</li>
+              <li>✓ Basic outdoor fixture repairs</li>
+              <li>✓ Screen repairs</li>
+              <li>✓ Weather stripping</li>
+              <li>✓ Hardware replacement</li>
+            </ul>
+            <a href="/contact" class="btn btn-primary mt-3">Get Quote</a>
+          </div>
         </div>
-    </div>
+      </div>
 
-    <!-- Property Cleanup -->
-    <div class="col-md-6">
+      <!-- Cleanup -->
+      <div class="col-md-6 col-lg-6">
         <div class="card h-100">
-            <div class="card-body">
-                <h5 class="card-title">Property Cleanup & Visual Enhancement</h5>
-                <ul class="list-unstyled">
-                    <li>✓ Yard debris removal</li>
-                    <li>✓ Plant/tree trimming and pruning</li>
-                    <li>✓ Basic landscaping maintenance</li>
-                    <li>✓ Pressure washing surfaces</li>
-                    <li>✓ Exterior window cleaning</li>
-                </ul>
-                <a href="/contact" class="btn btn-primary">Get Quote</a>
-            </div>
+          <div class="card-body">
+            <h5 class="card-title text-primary">Property Cleanup & Visual Enhancement</h5>
+            <ul class="list-unstyled fs-5">
+              <li>✓ Yard debris removal</li>
+              <li>✓ Plant/tree trimming and pruning</li>
+              <li>✓ Basic landscaping maintenance</li>
+              <li>✓ Pressure washing</li>
+              <li>✓ Exterior window cleaning</li>
+            </ul>
+            <a href="/contact" class="btn btn-primary mt-3">Get Quote</a>
+          </div>
         </div>
-    </div>
+      </div>
 
-    <!-- Property Preparation -->
-    <div class="col-md-6">
+      <!-- Prep -->
+      <div class="col-md-6 col-lg-6">
         <div class="card h-100">
-            <div class="card-body">
-                <h5 class="card-title">Property Preparation</h5>
-                <ul class="list-unstyled">
-                    <li>✓ Pre-sale property cleanup</li>
-                    <li>✓ Rental turnover preparation</li>
-                    <li>✓ Real estate showing prep</li>
-                    <li>✓ Storm cleanup</li>
-                    <li>✓ Seasonal maintenance</li>
-                </ul>
-                <a href="/contact" class="btn btn-primary">Get Quote</a>
-            </div>
+          <div class="card-body">
+            <h5 class="card-title text-primary">Property Preparation</h5>
+            <ul class="list-unstyled fs-5">
+              <li>✓ Pre-sale cleanup</li>
+              <li>✓ Rental turnover prep</li>
+              <li>✓ Real estate showings</li>
+              <li>✓ Storm cleanup</li>
+              <li>✓ Seasonal maintenance</li>
+            </ul>
+            <a href="/contact" class="btn btn-primary mt-3">Get Quote</a>
+          </div>
         </div>
-    </div>
+      </div>
 
-    <!-- Visual Enhancement -->
-    <div class="col-md-6">
+      <!-- Maintenance -->
+      <div class="col-md-6 col-lg-6">
         <div class="card h-100">
-            <div class="card-body">
-                <h5 class="card-title">Exterior Maintenance</h5>
-                <ul class="list-unstyled">
-                    <li>✓ Concrete repair</li>
-                    <li>✓ Paint</li>
-                    <li>✓ Curb appeal enhancement</li>
-                    <li>✓ General property inspection</li>
-                    <li>✓ Preventive maintenance</li>
-                </ul>
-                <a href="/contact" class="btn btn-primary">Get Quote</a>
-            </div>
+          <div class="card-body">
+            <h5 class="card-title text-primary">Exterior Maintenance</h5>
+            <ul class="list-unstyled fs-5">
+              <li>✓ Concrete repair</li>
+              <li>✓ Painting & touch-ups</li>
+              <li>✓ Curb appeal upgrades</li>
+              <li>✓ Property inspections</li>
+              <li>✓ Preventive maintenance</li>
+            </ul>
+            <a href="/contact" class="btn btn-primary mt-3">Get Quote</a>
+          </div>
         </div>
+      </div>
+
     </div>
-</div>
+  </div>
+</section>
 {% endblock %}
