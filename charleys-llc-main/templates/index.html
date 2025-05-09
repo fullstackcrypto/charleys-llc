@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="py-5 bg-dark text-light">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <h1 class="display-4 fw-bold">Smart Property Prep, Powered by Purpose</h1>
+        <p class="lead">Veteran-owned cleanup & property prep services for Chandler, AZ and beyond. Fast. Reliable. Impactful.</p>
+        <div class="mt-4">
+          <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg me-2">Get a Quote</a>
+          <a href="{{ url_for('services') }}" class="btn btn-outline-light btn-lg">Explore Services</a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card shadow-lg bg-gradient border-0">
+          <div class="card-body">
+            <h5 class="card-title text-primary fw-bold">What We Do</h5>
+            <ul class="list-unstyled fs-5">
+              <li class="mb-2">• Visual Property Cleanup & Enhancement</li>
+              <li class="mb-2">• Minor Repairs & Smart Fixes</li>
+              <li class="mb-2">• Real Estate Prep & Consulting</li>
+              <li class="mb-2">• Exterior Maintenance & Upgrades</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 bg-light text-dark">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="display-5 fw-bold">Projects Completed & Client Reviews</h2>
+      <p class="lead">See what our clients are saying and take a look at our recent work in the Chandler, AZ area.</p>
+    </div>
+
+    <div class="row mb-5">
+      <div class="col-md-4 mb-4">
+        <img src="/static/images/project1.jpg" class="img-fluid rounded shadow-sm" alt="Fence and patio cleanup">
+        <p class="mt-2 text-center">Fence Cleanup & Enhancement</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <img src="/static/images/project2.jpg" class="img-fluid rounded shadow-sm" alt="Smart light installation">
+        <p class="mt-2 text-center">Smart Outdoor Lighting Install</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <img src="/static/images/project3.jpg" class="img-fluid rounded shadow-sm" alt="Gutter repair and property prep">
+        <p class="mt-2 text-center">Exterior Gutter & Entry Prep</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="fw-bold">Seung K.</h5>
+            <p><strong>Rating:</strong> <span class="text-warning">★★★★★</span></p>
+            <p>Charley is very professional and skilled. He does the job right, no matter how long it takes. Quality over quantity every time!</p>
+            <p><small><strong>Verified Angi Review</strong> — July 2024</small></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="fw-bold">Emma &amp; Mark D.</h5>
+            <p><strong>Rating:</strong> <span class="text-warning">★★★★★</span></p>
+            <p>He is professional, prompt, and meticulous. We’re extremely satisfied and will definitely hire again!</p>
+            <p><small><strong>Verified Angi Review</strong> — June 2024</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="https://www.angi.com/companylist/us/az/chandler/charleys-llc-reviews-1.htm#reviews-section" target="_blank" class="btn btn-outline-dark">Read More Reviews on Angi</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

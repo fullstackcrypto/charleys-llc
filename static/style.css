@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: url("/static/arizona-bg.png") no-repeat center center fixed;
+  background-size: cover;
+  color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  backdrop-filter: brightness(0.6);
+}
+
+main {
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+input, textarea, button {
+  padding: 1rem;
+  border-radius: 8px;
+  border: none;
+}
+
+.button, button {
+  background: #00cc88;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.button:hover, button:hover {
+  background: #009966;
+}
