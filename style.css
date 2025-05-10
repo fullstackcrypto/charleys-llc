@@ -1,14 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap');
 
 body {
-  margin: 0;
-  font-family: 'Rajdhani', sans-serif;
-  background: url('assets/chandler-desert.jpg') no-repeat center center fixed;
-  background-size: cover;
-  color: #f0f0f0;
-  text-align: center;
+  background-color: #0e0e0e;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+a {
+  color: #1e90ff;
+}
+
+button {
+  background-color: #1e90ff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
 main {
   margin: 10vh auto;
   padding: 2rem;
