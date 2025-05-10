@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Get a Quote • Ready-Set Solutions</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main>
     <h1>Schedule a Quote</h1>
-    <p>Consultation fee: <strong>$25</strong> (credited toward installation)</p>
+    <p>Consultation fee: <strong>$25</strong><br>This goes toward your final install price.</p>
+
     <form action="https://formsubmit.co/support@charleysllc.com" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Brief description of project..." rows="5" required></textarea>
-      <input type="hidden" name="_next" value="thankyou.html">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Describe the job in detail..." rows="5" required></textarea>
+      <input type="hidden" name="_next" value="thankyou.html" />
       <button type="submit">Send Quote Request</button>
     </form>
-    <br>
+
+    <br />
+
     <form action="https://www.paypal.com/paypalme/charleysllc/25" method="get" target="_blank">
-      <button type="submit">Pay $25 to Confirm Consultation</button>
+      <button type="submit">Pay $25 Consultation Fee</button>
     </form>
   </main>
 </body>
