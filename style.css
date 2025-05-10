@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  font-family: 'Rajdhani', sans-serif;
+  background: url('assets/chandler-desert.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #f0f0f0;
+  text-align: center;
+}
+main {
+  margin: 10vh auto;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 16px;
+  max-width: 700px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+}
+input, textarea {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 1rem;
+}
+button, .button, .secondary {
+  padding: 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0.5rem;
+  text-decoration: none;
+}
+.button { background: #00cc88; color: white; }
+.secondary { background: transparent; border: 2px solid #00cc88; color: #00cc88; }
+.button:hover, .secondary:hover, button:hover { background: #009966; color: white; }
