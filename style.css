@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Rajdhani', sans-serif;
+  background: url('assets/chandler-desert.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #f0f0f0;
+  text-align: center;
+}
+
+main {
+  margin: 10vh auto;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 16px;
+  max-width: 700px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+.button, .secondary, button {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.button, button {
+  background: #00cc88;
+  color: white;
+  border: none;
+}
+
+.button:hover, button:hover {
+  background: #009966;
+}
+
+.secondary {
+  border: 2px solid #00cc88;
+  background: transparent;
+  color: #00cc88;
+}
+
+.secondary:hover {
+  background: #00cc88;
+  color: white;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border: none;
+  border-radius: 8px;
+  background: #222;
+  color: white;
+  font-size: 1rem;
+}
