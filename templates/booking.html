@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Service | Ready-Set Solutions</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-container">
+      <div class="nav-logo">Ready-Set Solutions</div>
+      <ul class="nav-menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/booking" class="btn-primary">Book Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero" style="padding: 140px 0 60px;">
+    <div class="container">
+      <h1 class="hero-title" style="font-size: 48px;">Book Your Service</h1>
+      <p class="hero-subtitle">Most appointments available within 24-48 hours</p>
+    </div>
+  </section>
+
+  <section style="padding: 60px 0 100px;">
+    <div class="container">
+
+```
+  <div class="booking-steps" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-bottom: 60px;">
+    <div style="text-align: center; padding: 24px; background: #f8fafc; border-radius: 12px;">
+      <div style="font-size: 32px; margin-bottom: 12px;">📅</div>
+      <h3 style="font-size: 18px; margin-bottom: 8px;">1. Pick a Time</h3>
+      <p style="color: #64748b; font-size: 14px;">Select from available slots</p>
+    </div>
+    <div style="text-align: center; padding: 24px; background: #f8fafc; border-radius: 12px;">
+      <div style="font-size: 32px; margin-bottom: 12px;">📝</div>
+      <h3 style="font-size: 18px; margin-bottom: 8px;">2. Describe Job</h3>
+      <p style="color: #64748b; font-size: 14px;">Tell us what you need</p>
+    </div>
+    <div style="text-align: center; padding: 24px; background: #f8fafc; border-radius: 12px;">
+      <div style="font-size: 32px; margin-bottom: 12px;">💳</div>
+      <h3 style="font-size: 18px; margin-bottom: 8px;">3. Pay Deposit</h3>
+      <p style="color: #64748b; font-size: 14px;">Secure your appointment</p>
+    </div>
+    <div style="text-align: center; padding: 24px; background: #f8fafc; border-radius: 12px;">
+      <div style="font-size: 32px; margin-bottom: 12px;">✅</div>
+      <h3 style="font-size: 18px; margin-bottom: 8px;">4. Get It Done</h3>
+      <p style="color: #64748b; font-size: 14px;">I show up on time</p>
+    </div>
+  </div>
+
+  <!-- Calendly Integration -->
+  <div style="background: white; border-radius: 16px; padding: 40px; border: 2px solid #e2e8f0; margin-bottom: 40px;">
+    <h2 style="font-size: 28px; margin-bottom: 24px; text-align: center;">Select Your Appointment</h2>
+    
+    <!-- Replace YOUR_CALENDLY_USERNAME with your actual Calendly link -->
+    <div class="calendly-inline-widget" 
+         data-url="https://calendly.com/YOUR_CALENDLY_USERNAME/service-call?hide_event_type_details=1&hide_gdpr_banner=1" 
+         style="min-width:320px;height:700px;">
+    </div>
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    
+    <div style="margin-top: 24px; padding: 20px; background: #fef3c7; border-radius: 8px; border-left: 4px solid #f59e0b;">
+      <p style="margin: 0; color: #92400e;">
+        <strong>⚠️ Setup Required:</strong> Replace YOUR_CALENDLY_USERNAME in booking.html with your actual Calendly username. 
+        Create a free account at <a href="https://calendly.com" target="_blank" style="color: #2563eb;">calendly.com</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Quick Booking Form (Alternative) -->
+  <div style="background: #f8fafc; border-radius: 16px; padding: 40px; max-width: 600px; margin: 0 auto;">
+    <h3 style="font-size: 24px; margin-bottom: 16px; text-align: center;">Or Request a Call Back</h3>
+    <p style="text-align: center; color: #64748b; margin-bottom: 32px;">Can't find a time? I'll contact you within 2 hours.</p>
+    
+    <form action="https://formsubmit.co/support@charleysllc.com" method="POST" style="display: flex; flex-direction: column; gap: 20px;">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://readyset.charleysllc.com/thanks">
+      <input type="hidden" name="_subject" value="New Booking Request">
+      
+      <input type="text" name="name" placeholder="Your Name" required 
+             style="padding: 14px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 15px;">
+      
+      <input type="tel" name="phone" placeholder="Phone Number" required 
+             style="padding: 14px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 15px;">
+      
+      <input type="email" name="email" placeholder="Email Address" required 
+             style="padding: 14px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 15px;">
+      
+      <select name="service" required 
+              style="padding: 14px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 15px;">
+        <option value="">Select Service Type</option>
+        <option value="Smart Home Install">Smart Home Install</option>
+        <option value="Electrical Work">Electrical Work</option>
+        <option value="Appliance Install">Appliance Install/Repair</option>
+        <option value="Assembly">Furniture Assembly</option>
+        <option value="Diagnostics">Troubleshooting/Diagnostics</option>
+        <option value="Other">Other</option>
+      </select>
+      
+      <textarea name="message" placeholder="Describe your project..." rows="4" required 
+                style="padding: 14px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 15px; resize: vertical;"></textarea>
+      
+      <input type="text" name="address" placeholder="Service Address (City/Zip)" 
+             style="padding: 14px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 15px;">
+      
+      <button type="submit" class="btn btn-large btn-primary" style="width: 100%;">
+        Request Call Back
+      </button>
+    </form>
+  </div>
+
+  <!-- Payment Info -->
+  <div style="margin-top: 60px; text-align: center; max-width: 600px; margin-left: auto; margin-right: auto;">
+    <h3 style="font-size: 20px; margin-bottom: 16px;">💳 Payment Methods</h3>
+    <p style="color: #64748b; line-height: 1.6; margin-bottom: 24px;">
+      Pay online via Stripe or PayPal. Cash, Venmo accepted on-site. 50% deposit required for jobs over $300.
+    </p>
+    <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+      <span style="padding: 8px 16px; background: #f8fafc; border-radius: 8px; font-size: 14px; font-weight: 600;">Stripe</span>
+      <span style="padding: 8px 16px; background: #f8fafc; border-radius: 8px; font-size: 14px; font-weight: 600;">PayPal</span>
+      <span style="padding: 8px 16px; background: #f8fafc; border-radius: 8px; font-size: 14px; font-weight: 600;">Venmo</span>
+      <span style="padding: 8px 16px; background: #f8fafc; border-radius: 8px; font-size: 14px; font-weight: 600;">Cash</span>
+    </div>
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Ready-Set Solutions</h3>
+          <p>Professional handyman & electromechanical services</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="/services">All Services</a></li>
+              <li><a href="/pricing">Pricing</a></li>
+              <li><a href="/booking">Book Now</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Contact</h4>
+            <ul>
+              <li>Chandler, AZ 85224</li>
+              <li>support@charleysllc.com</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 CHARLEY'S LLC DBA Ready-Set Solutions</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
