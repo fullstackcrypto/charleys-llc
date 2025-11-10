@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing | Ready-Set Solutions</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-container">
+      <div class="nav-logo">Ready-Set Solutions</div>
+      <ul class="nav-menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/booking" class="btn-primary">Book Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero" style="padding: 140px 0 80px;">
+    <div class="container">
+      <h1 class="hero-title" style="font-size: 48px;">Simple, Transparent Pricing</h1>
+      <p class="hero-subtitle">No surprises. No hidden fees. Book with confidence.</p>
+    </div>
+  </section>
+
+  <section class="pricing-section" style="padding: 80px 0;">
+    <div class="container">
+
+```
+  <div class="pricing-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 60px;">
+    
+    <div class="pricing-card">
+      <div class="pricing-header">
+        <h3>Hourly Rate</h3>
+        <div class="price">$95<span>/hour</span></div>
+        <p>Standard handyman work</p>
+      </div>
+      <ul class="pricing-features">
+        <li>✓ Basic electrical & repairs</li>
+        <li>✓ Furniture assembly</li>
+        <li>✓ Minor installations</li>
+        <li>✓ General handyman tasks</li>
+      </ul>
+    </div>
+
+    <div class="pricing-card featured">
+      <div class="badge">Most Popular</div>
+      <div class="pricing-header">
+        <h3>Smart Home Package</h3>
+        <div class="price">$250<span>-400</span></div>
+        <p>Complete smart device setup</p>
+      </div>
+      <ul class="pricing-features">
+        <li>✓ Smart doorbell install</li>
+        <li>✓ Thermostat setup & config</li>
+        <li>✓ Network optimization</li>
+        <li>✓ App training included</li>
+      </ul>
+    </div>
+
+    <div class="pricing-card">
+      <div class="pricing-header">
+        <h3>Automation Services</h3>
+        <div class="price">$120<span>/hour</span></div>
+        <p>Electromechanical expertise</p>
+      </div>
+      <ul class="pricing-features">
+        <li>✓ System troubleshooting</li>
+        <li>✓ Automation integration</li>
+        <li>✓ Technical consulting</li>
+        <li>✓ Custom solutions</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="pricing-table" style="background: white; border-radius: 16px; padding: 40px; border: 2px solid #e2e8f0; margin-bottom: 60px;">
+    <h2 style="font-size: 32px; margin-bottom: 32px; text-align: center;">Service Menu</h2>
+    <table style="width: 100%; border-collapse: collapse;">
+      <thead>
+        <tr style="border-bottom: 2px solid #e2e8f0;">
+          <th style="text-align: left; padding: 16px; font-weight: 600;">Service</th>
+          <th style="text-align: left; padding: 16px; font-weight: 600;">Typical Range</th>
+          <th style="text-align: left; padding: 16px; font-weight: 600;">Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom: 1px solid #f1f5f9;">
+          <td style="padding: 16px;">Ring Doorbell Install</td>
+          <td style="padding: 16px; font-weight: 600;">$150-200</td>
+          <td style="padding: 16px; color: #64748b;">1-2 hours</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #f1f5f9;">
+          <td style="padding: 16px;">Smart Thermostat Setup</td>
+          <td style="padding: 16px; font-weight: 600;">$175-250</td>
+          <td style="padding: 16px; color: #64748b;">1.5-2 hours</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #f1f5f9;">
+          <td style="padding: 16px;">Ceiling Fan Install</td>
+          <td style="padding: 16px; font-weight: 600;">$150-250</td>
+          <td style="padding: 16px; color: #64748b;">1.5-2 hours</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #f1f5f9;">
+          <td style="padding: 16px;">Light Fixture Install</td>
+          <td style="padding: 16px; font-weight: 600;">$100-180</td>
+          <td style="padding: 16px; color: #64748b;">1-1.5 hours</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #f1f5f9;">
+          <td style="padding: 16px;">Outlet/Switch Replacement</td>
+          <td style="padding: 16px; font-weight: 600;">$95-150</td>
+          <td style="padding: 16px; color: #64748b;">0.5-1 hour</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #f1f5f9;">
+          <td style="padding: 16px;">Garbage Disposal Install</td>
+          <td style="padding: 16px; font-weight: 600;">$150-225</td>
+          <td style="padding: 16px; color: #64748b;">1.5-2 hours</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #f1f5f9;">
+          <td style="padding: 16px;">TV Wall Mount</td>
+          <td style="padding: 16px; font-weight: 600;">$125-200</td>
+          <td style="padding: 16px; color: #64748b;">1-1.5 hours</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #f1f5f9;">
+          <td style="padding: 16px;">Furniture Assembly</td>
+          <td style="padding: 16px; font-weight: 600;">$80-150</td>
+          <td style="padding: 16px; color: #64748b;">1-2 hours</td>
+        </tr>
+        <tr>
+          <td style="padding: 16px;">Diagnostic Service</td>
+          <td style="padding: 16px; font-weight: 600;">$95 flat</td>
+          <td style="padding: 16px; color: #64748b;">Up to 1 hour</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top: 24px; color: #64748b; font-size: 14px;">* Prices include labor only. Materials billed separately at cost + 10%.</p>
+  </div>
+
+  <div class="pricing-info" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 40px;">
+    <div style="background: #f8fafc; padding: 32px; border-radius: 12px;">
+      <h3 style="font-size: 20px; margin-bottom: 12px;">💳 Payment Options</h3>
+      <p style="color: #64748b; line-height: 1.6;">Stripe, PayPal, Venmo, Cash. 50% deposit required for jobs over $300. Pay online before service.</p>
+    </div>
+    <div style="background: #f8fafc; padding: 32px; border-radius: 12px;">
+      <h3 style="font-size: 20px; margin-bottom: 12px;">📅 Booking Policy</h3>
+      <p style="color: #64748b; line-height: 1.6;">Same-day or next-day slots available. Book online 24/7. Free quotes for jobs over $400. Easy rescheduling.</p>
+    </div>
+    <div style="background: #f8fafc; padding: 32px; border-radius: 12px;">
+      <h3 style="font-size: 20px; margin-bottom: 12px;">📍 Service Area</h3>
+      <p style="color: #64748b; line-height: 1.6;">15-mile radius from Chandler, AZ. Includes Gilbert, Mesa, Tempe. No trip charges within service area.</p>
+    </div>
+  </div>
+
+  <div class="cta-center">
+    <a href="/booking" class="btn btn-large btn-primary">Schedule Your Service</a>
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Ready-Set Solutions</h3>
+          <p>Professional handyman & electromechanical services</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="/services">All Services</a></li>
+              <li><a href="/pricing">Pricing</a></li>
+              <li><a href="/booking">Book Now</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Contact</h4>
+            <ul>
+              <li>Chandler, AZ 85224</li>
+              <li>support@charleysllc.com</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 CHARLEY'S LLC DBA Ready-Set Solutions</p>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    .pricing-card {
+      background: white;
+      border: 2px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 40px 32px;
+      position: relative;
+    }
+    .pricing-card.featured {
+      background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+      color: white;
+      border: none;
+      transform: scale(1.05);
+    }
+    .badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .pricing-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .pricing-header h3 {
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+    .price {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .price span {
+      font-size: 20px;
+      font-weight: 400;
+      opacity: 0.8;
+    }
+    .pricing-features {
+      list-style: none;
+      padding: 0;
+    }
+    .pricing-features li {
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      font-size: 15px;
+    }
+    .featured .pricing-features li {
+      border-bottom-color: rgba(255,255,255,0.2);
+    }
+    @media (max-width: 768px) {
+      .pricing-card.featured {
+        transform: scale(1);
+      }
+      table {
+        font-size: 14px;
+      }
+      th, td {
+        padding: 12px 8px !important;
+      }
+    }
+  </style>
+
+</body>
+</html>
