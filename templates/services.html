@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Ready-Set Solutions</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-container">
+      <div class="nav-logo">Ready-Set Solutions</div>
+      <ul class="nav-menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/booking" class="btn-primary">Book Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero" style="padding: 140px 0 60px;">
+    <div class="container">
+      <h1 class="hero-title" style="font-size: 48px;">Complete Service Menu</h1>
+      <p class="hero-subtitle">Professional handyman & electromechanical services for Chandler, Gilbert & Mesa</p>
+    </div>
+  </section>
+
+  <section style="padding: 60px 0;">
+    <div class="container">
+
+```
+  <!-- Service Categories -->
+  <div class="service-detail-grid" style="display: grid; gap: 40px;">
+    
+    <!-- Smart Home & Automation -->
+    <div class="service-detail-card">
+      <div class="service-detail-header">
+        <span class="service-icon" style="font-size: 56px;">🏠</span>
+        <div>
+          <h2>Smart Home & Automation</h2>
+          <p style="color: #64748b; margin-top: 8px;">Modern home technology installation and setup</p>
+        </div>
+      </div>
+      <div class="service-detail-content">
+        <h3>What's Included:</h3>
+        <ul class="service-list">
+          <li>Ring/Nest doorbell installation & configuration</li>
+          <li>Smart thermostat install (Nest, Ecobee, Honeywell)</li>
+          <li>WiFi-enabled switches and outlets</li>
+          <li>Motion sensors and smart lighting</li>
+          <li>Home automation system integration</li>
+          <li>Network optimization for smart devices</li>
+          <li>Mobile app setup and training</li>
+        </ul>
+        <div class="service-pricing">
+          <span class="price-label">Typical Investment:</span>
+          <span class="price-value">$150-400</span>
+        </div>
+        <a href="/booking" class="btn btn-primary">Book This Service</a>
+      </div>
+    </div>
+
+    <!-- Electrical Work -->
+    <div class="service-detail-card">
+      <div class="service-detail-header">
+        <span class="service-icon" style="font-size: 56px;">⚡</span>
+        <div>
+          <h2>Electrical Work</h2>
+          <p style="color: #64748b; margin-top: 8px;">Safe, code-compliant electrical repairs and installations</p>
+        </div>
+      </div>
+      <div class="service-detail-content">
+        <h3>What's Included:</h3>
+        <ul class="service-list">
+          <li>Outlet installation & replacement (standard, GFCI, USB)</li>
+          <li>Light switch replacement & dimmer install</li>
+          <li>Ceiling fan installation & repair</li>
+          <li>Light fixture installation (indoor/outdoor)</li>
+          <li>Electrical troubleshooting & diagnostics</li>
+          <li>Circuit breaker replacement</li>
+          <li>Smoke detector & carbon monoxide alarm install</li>
+        </ul>
+        <div class="service-pricing">
+          <span class="price-label">Typical Investment:</span>
+          <span class="price-value">$95-300</span>
+        </div>
+        <a href="/booking" class="btn btn-primary">Book This Service</a>
+      </div>
+    </div>
+
+    <!-- Appliance Install & Repair -->
+    <div class="service-detail-card">
+      <div class="service-detail-header">
+        <span class="service-icon" style="font-size: 56px;">🔧</span>
+        <div>
+          <h2>Appliance Install & Repair</h2>
+          <p style="color: #64748b; margin-top: 8px;">Professional appliance service and hookups</p>
+        </div>
+      </div>
+      <div class="service-detail-content">
+        <h3>What's Included:</h3>
+        <ul class="service-list">
+          <li>Dishwasher installation & hookup</li>
+          <li>Garbage disposal install & repair</li>
+          <li>Microwave mounting & installation</li>
+          <li>Basic HVAC troubleshooting</li>
+          <li>Water heater diagnostics</li>
+          <li>Refrigerator/washer/dryer hookup</li>
+          <li>Minor appliance electrical connections</li>
+        </ul>
+        <div class="service-pricing">
+          <span class="price-label">Typical Investment:</span>
+          <span class="price-value">$125-250</span>
+        </div>
+        <a href="/booking" class="btn btn-primary">Book This Service</a>
+      </div>
+    </div>
+
+    <!-- Assembly & Installation -->
+    <div class="service-detail-card">
+      <div class="service-detail-header">
+        <span class="service-icon" style="font-size: 56px;">🛠️</span>
+        <div>
+          <h2>Assembly & Installation</h2>
+          <p style="color: #64748b; margin-top: 8px;">Fast, precise assembly and mounting services</p>
+        </div>
+      </div>
+      <div class="service-detail-content">
+        <h3>What's Included:</h3>
+        <ul class="service-list">
+          <li>Furniture assembly (IKEA, Wayfair, etc.)</li>
+          <li>TV wall mounting & cable management</li>
+          <li>Shelving & storage unit installation</li>
+          <li>Office furniture & desk assembly</li>
+          <li>Curtain rod & blind installation</li>
+          <li>Picture & mirror hanging</li>
+          <li>Baby gate & child safety equipment</li>
+        </ul>
+        <div class="service-pricing">
+          <span class="price-label">Typical Investment:</span>
+          <span class="price-value">$80-200</span>
+        </div>
+        <a href="/booking" class="btn btn-primary">Book This Service</a>
+      </div>
+    </div>
+
+    <!-- Diagnostics & Troubleshooting -->
+    <div class="service-detail-card">
+      <div class="service-detail-header">
+        <span class="service-icon" style="font-size: 56px;">🔍</span>
+        <div>
+          <h2>Diagnostics & Troubleshooting</h2>
+          <p style="color: #64748b; margin-top: 8px;">Expert problem identification and recommendations</p>
+        </div>
+      </div>
+      <div class="service-detail-content">
+        <h3>What's Included:</h3>
+        <ul class="service-list">
+          <li>Electrical system diagnosis</li>
+          <li>Appliance malfunction assessment</li>
+          <li>Smart home connectivity issues</li>
+          <li>Mechanical system troubleshooting</li>
+          <li>Detailed written report of findings</li>
+          <li>Repair cost estimates</li>
+          <li>Vendor/specialist referrals when needed</li>
+        </ul>
+        <div class="service-pricing">
+          <span class="price-label">Flat Rate:</span>
+          <span class="price-value">$95</span>
+        </div>
+        <a href="/booking" class="btn btn-primary">Book This Service</a>
+      </div>
+    </div>
+
+    <!-- Custom Projects -->
+    <div class="service-detail-card" style="background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%); color: white;">
+      <div class="service-detail-header">
+        <span class="service-icon" style="font-size: 56px;">🎯</span>
+        <div>
+          <h2 style="color: white;">Custom Electromechanical Projects</h2>
+          <p style="color: rgba(255,255,255,0.9); margin-top: 8px;">Specialized automation and technical work</p>
+        </div>
+      </div>
+      <div class="service-detail-content">
+        <h3 style="color: white;">What's Included:</h3>
+        <ul class="service-list" style="color: rgba(255,255,255,0.95);">
+          <li>Automation system integration</li>
+          <li>Custom electromechanical solutions</li>
+          <li>Technical consulting for complex projects</li>
+          <li>System optimization and upgrades</li>
+          <li>Prototype development and testing</li>
+          <li>Advanced troubleshooting services</li>
+          <li>Industrial/commercial electromechanical work</li>
+        </ul>
+        <div class="service-pricing" style="color: white;">
+          <span class="price-label">Custom Quote:</span>
+          <span class="price-value">Contact for pricing</span>
+        </div>
+        <a href="/booking" class="btn" style="background: white; color: #2563eb;">Discuss Your Project</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Service Area -->
+  <div style="margin-top: 80px; background: #f8fafc; padding: 60px 40px; border-radius: 16px; text-align: center;">
+    <h2 style="font-size: 32px; margin-bottom: 24px;">Service Area</h2>
+    <p style="font-size: 18px; color: #64748b; margin-bottom: 32px;">15-mile radius from Chandler, AZ</p>
+    <div style="display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;">
+      <span style="font-size: 16px; color: #2563eb; font-weight: 600;">✓ Chandler</span>
+      <span style="font-size: 16px; color: #2563eb; font-weight: 600;">✓ Gilbert</span>
+      <span style="font-size: 16px; color: #2563eb; font-weight: 600;">✓ Mesa</span>
+      <span style="font-size: 16px; color: #2563eb; font-weight: 600;">✓ Tempe</span>
+      <span style="font-size: 16px; color: #2563eb; font-weight: 600;">✓ Queen Creek</span>
+      <span style="font-size: 16px; color: #2563eb; font-weight: 600;">✓ Apache Junction</span>
+    </div>
+    <p style="margin-top: 24px; color: #64748b; font-size: 14px;">Check your zip code at booking to confirm coverage</p>
+  </div>
+
+  <!-- CTA -->
+  <div style="margin-top: 60px; text-align: center;">
+    <h2 style="font-size: 36px; margin-bottom: 16px;">Ready to Get Started?</h2>
+    <p style="font-size: 18px; color: #64748b; margin-bottom: 32px;">Book online now or request a call back</p>
+    <a href="/booking" class="btn btn-large btn-primary">Schedule Your Service</a>
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Ready-Set Solutions</h3>
+          <p>Professional handyman & electromechanical services</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="/services">All Services</a></li>
+              <li><a href="/pricing">Pricing</a></li>
+              <li><a href="/booking">Book Now</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Contact</h4>
+            <ul>
+              <li>Chandler, AZ 85224</li>
+              <li>support@charleysllc.com</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 CHARLEY'S LLC DBA Ready-Set Solutions</p>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    .service-detail-card {
+      background: white;
+      border: 2px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 40px;
+    }
+    .service-detail-header {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      margin-bottom: 32px;
+      padding-bottom: 32px;
+      border-bottom: 2px solid #e2e8f0;
+    }
+    .service-detail-header h2 {
+      font-size: 28px;
+      margin: 0;
+    }
+    .service-detail-content h3 {
+      font-size: 18px;
+      margin-bottom: 16px;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+    .service-list {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 32px;
+    }
+    .service-list li {
+      padding: 12px 0 12px 32px;
+      position: relative;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .service-list li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #10b981;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .service-pricing {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f8fafc;
+      padding: 20px 24px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+    }
+    .price-label {
+      font-size: 16px;
+      color: #64748b;
+      font-weight: 500;
+    }
+    .price-value {
+      font-size: 28px;
+      font-weight: 700;
+      color: #2563eb;
+    }
+    @media (max-width: 768px) {
+      .service-detail-header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .service-detail-card {
+        padding: 24px;
+      }
+    }
+  </style>
+
+</body>
+</html>
